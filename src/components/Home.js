@@ -88,7 +88,7 @@ const CustomParticles = styled(Particles)`
 
 const CustomTyping = styled(Typing)`
     margin-bottom: 1%;
-    margin: 10%;
+    padding: 10%;
 `
 const CustomText = styled.span`
     color: #D9D5D2;
