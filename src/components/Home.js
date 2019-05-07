@@ -58,7 +58,7 @@ class Home extends React.Component {
                     },
             }}/>
             <CustomTyping speed={20} onFinishedTyping={() => this.setState({renderMenu: true})}>
-                <CustomText>Hey, I'm Valentin Ouvrard.<br/>Welcome to my website, what do you want to know ?</CustomText>
+                <CustomText>Hey, I'm Valentin Ouvrard.<br/>Welcome to my website, what do you want to know?</CustomText>
             </CustomTyping>
             <Menu rendered={renderMenu}/>
             <EasterEgg onClick={() => this.setState({showEaster: true})}/>
