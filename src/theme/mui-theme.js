@@ -8,7 +8,7 @@ const muiTheme = createMuiTheme({
     secondary: {
         main: "#0D0D0D"
     }
-  },
+  }
 });
 
 export default muiTheme
