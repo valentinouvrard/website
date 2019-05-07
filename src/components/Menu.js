@@ -14,22 +14,22 @@ class Menu extends React.Component {
         <CustomItem pose={this.state.hovering === 1 ? 'hovered' : 'idle'}
             onMouseEnter={() => this.setState({ hovering: 1 })}
             onMouseLeave={() => this.setState({ hovering: -1 })}>
-            <CustomText>SOON AVAILABLE</CustomText>
+            <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
         </CustomItem>
         <CustomItem pose={this.state.hovering === 2 ? 'hovered' : 'idle'}
             onMouseEnter={() => this.setState({ hovering: 2 })}
             onMouseLeave={() => this.setState({ hovering: -1 })}>
-            <CustomText>SOON AVAILABLE</CustomText>
+            <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
         </CustomItem>
         <CustomItem pose={this.state.hovering === 3 ? 'hovered' : 'idle'}
             onMouseEnter={() => this.setState({ hovering: 3 })}
             onMouseLeave={() => this.setState({ hovering: -1 })}>
-            <CustomText>SOON AVAILABLE</CustomText>
+            <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
         </CustomItem>
         <CustomItem pose={this.state.hovering === 4 ? 'hovered' : 'idle'}
             onMouseEnter={() => this.setState({ hovering: 4 })}
             onMouseLeave={() => this.setState({ hovering: -1 })}>
-            <CustomText>SOON AVAILABLE</CustomText>
+            <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
         </CustomItem>
     </Container>)
   }
@@ -46,21 +46,28 @@ const MenuDiv = posed.div({
 
 const Container = styled(MenuDiv)`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10%;
 `
 
 const MenuItem = posed.div({
-    idle: { x: '0%', scale: 1 },
-    hovered: { x: '+15%', scale: 1.3 }
+    idle: { y: '0%', scale: 1 },
+    hovered: { y: '+15%', scale: 1.3 }
 })
 
 const CustomItem = styled(MenuItem)`
 `
 
 
-const CustomText = styled.span`
-color: #FDFFFC;
-font-size: 200%;
+const CustomText = styled.a`
+text-decoration: none;
+color: #3D5473;
+font-size: 150%;
+`
+
+const CustomTextClosed = styled(CustomText)`
+color: #2D4459;
 `
 
 export default Menu

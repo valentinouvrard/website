@@ -19,7 +19,10 @@ class Home extends React.Component {
             <CustomParticles params={{
             		particles: {
                         number: {
-                            value: showEaster ? 50 : 100,
+                            value: showEaster ? 50 : 150,
+                        },
+                        color: {
+                            value: "#FDFFFC"
                         },
             			line_linked: {
                             enable: false,
@@ -36,10 +39,11 @@ class Home extends React.Component {
                             ]
                         } : {},
                         move: {
-                            speed: 10
+                            speed: 5
                         },
                         size: {
-                            value: showEaster ? 20 : 2
+                            value: showEaster ? 20 : 2,
+                            random: true
                         }
                     },
                     interactivity: {
@@ -75,9 +79,6 @@ const EasterEgg =  styled.div`
 `
 
 const Container = styled.div`
-    padding: 20px;
-    width: 100%;
-    height: 100%;
 `
 const CustomParticles = styled(Particles)`
     position: absolute;
@@ -86,10 +87,11 @@ const CustomParticles = styled(Particles)`
 `
 
 const CustomTyping = styled(Typing)`
-    padding-bottom: 1%;
+    margin-bottom: 1%;
+    margin: 10%;
 `
 const CustomText = styled.span`
-    color: #FDFFFC;
+    color: #D9D5D2;
     font-size: 150%;
 `
 
