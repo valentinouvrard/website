@@ -1,0 +1,30 @@
+image: node:alpine
+
+cache:
+  paths:
+  - node_modules
+
+stages:
+- build
+- deploy
+
+build:
+  stage: build
+
+  script:
+    - npm install # Install all dependencies
+    - npm run build --prod # Build for prod
+    - cp public/index.html public/404.html # Not necessary, but helps with https://medium.com/@pshrmn/demystifying-single-page-applications-3068d0555d46
+
+  artifacts:
+    paths:
+    - build # The built files for Gitlab Pages to serve
+
+deploy:
+  stage: deploy
+  
+  script:
+    - lftp -c "set ftp:ssl-allow no; open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER; mirror -Rev build/ ./www  --ignore-time --parallel=10 --exclude-glob .git* --exclude .git/"
+
+  only:
+    - master # Only run on master branch
