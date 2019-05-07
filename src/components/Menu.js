@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import styled from 'styled-components'
-import Typing from 'react-typing-animation'
 import posed from 'react-pose'
-import { NavigationFullscreenExit } from 'material-ui/svg-icons';
 
 class Menu extends React.Component {
     state = {
