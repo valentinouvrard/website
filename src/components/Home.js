@@ -19,7 +19,7 @@ class Home extends React.Component {
             <CustomParticles params={{
             		particles: {
                         number: {
-                            value: showEaster ? 50 : 150,
+                            value: showEaster ? 50 : 100,
                         },
                         color: {
                             value: "#FDFFFC"
