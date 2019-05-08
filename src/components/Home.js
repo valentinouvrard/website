@@ -47,12 +47,6 @@ class Home extends React.Component {
                         }
                     },
                     interactivity: {
-                        events: {
-                            onhover: {
-                                enable: true,
-                                mode: 'repulse'
-                            },
-                        },
                         modes: {
                             repulse: {
                                 distance: 200,
@@ -79,6 +73,9 @@ const EasterEgg =  styled.div`
 `
 
 const Container = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
 `
 const CustomParticles = styled(Particles)`
     position: absolute;
