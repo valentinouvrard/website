@@ -12,25 +12,41 @@ class Menu extends React.Component {
     return (
       <Container pose={this.props.rendered ? 'open' : 'close'}>
         <CustomMenuDiv>
-            <CustomItem pose={this.state.hovering === 1 ? 'hovered' : 'idle'}
+            <CustomItem 
                 onMouseEnter={() => this.setState({ hovering: 1 })}
                 onMouseLeave={() => this.setState({ hovering: -1 })}>
-                <CustomText href='https://netflixroulette.valentinouvrard.fr'>What is Netflix Roulette ?</CustomText>
+                <CustomText 
+                    pose={this.state.hovering === 1 ? 'hovered' : 'idle'} 
+                    href='https://netflixroulette.valentinouvrard.fr'>
+                    What is Netflix Roulette ?
+                </CustomText>
             </CustomItem>
-            <CustomItem pose={this.state.hovering === 2 ? 'hovered' : 'idle'}
+            <CustomItem 
                 onMouseEnter={() => this.setState({ hovering: 2 })}
                 onMouseLeave={() => this.setState({ hovering: -1 })}>
-                <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
+                <CustomTextClosed 
+                    pose={this.state.hovering === 2 ? 'hovered' : 'idle'} 
+                    href='https://netflixroulette.valentinouvrard.fr'>
+                    Soon Available
+                </CustomTextClosed>
             </CustomItem>
-            <CustomItem pose={this.state.hovering === 3 ? 'hovered' : 'idle'}
+            <CustomItem 
                 onMouseEnter={() => this.setState({ hovering: 3 })}
                 onMouseLeave={() => this.setState({ hovering: -1 })}>
-                <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
+                <CustomTextClosed 
+                    pose={this.state.hovering === 3 ? 'hovered' : 'idle'} 
+                    href='https://netflixroulette.valentinouvrard.fr'>
+                    Soon Available
+                </CustomTextClosed>
             </CustomItem>
-            <CustomItem pose={this.state.hovering === 4 ? 'hovered' : 'idle'}
+            <CustomItem 
                 onMouseEnter={() => this.setState({ hovering: 4 })}
                 onMouseLeave={() => this.setState({ hovering: -1 })}>
-                <CustomTextClosed href='.'>SOON AVAILABLE</CustomTextClosed>
+                <CustomTextClosed 
+                    pose={this.state.hovering === 4 ? 'hovered' : 'idle'} 
+                    href='https://netflixroulette.valentinouvrard.fr'>
+                    Soon Available
+                </CustomTextClosed>
             </CustomItem>
         </CustomMenuDiv>
     </Container>)
@@ -52,25 +68,35 @@ const Container = styled(AnimContainer)`
     justify-content: center;
 `
 
+
 const CustomMenuDiv = styled.div`
+    width: 100%;
+    margin: auto;
+    flex-grow: 1;
     display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-
 `
-
-const MenuItem = posed.div({
+const MenuItem = posed.a({
     idle: { y: '0%', scale: 1 },
     hovered: { y: '+15%', scale: 1.3 }
 })
 
-const CustomItem = styled(MenuItem)`
-    margin: 1%;
+const CustomItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 20%;
+    margin: auto;
+    margin-top: 0;
+    padding: 10px;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: center;
 `
 
 
-const CustomText = styled.a`
+const CustomText = styled(MenuItem)`
 text-decoration: none;
 color: #3D5473;
 font-size: 125%;
