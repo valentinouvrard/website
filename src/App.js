@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import Home from './components/Home'
 import Header from './components/Headers'
+import Particles from 'react-particles-js';
 class App extends React.Component {
 
   render() {
@@ -13,8 +14,35 @@ class App extends React.Component {
       <ContextProvider>
         <WithThemes>
           <MainContainer>
-            <Header/>
-            <Home/>
+          <CustomParticles params={{
+                    particles: {
+                        number: {
+                            value: 100,
+                        },
+                        color: {
+                            value: "#FDFFFC"
+                        },
+                        line_linked: {
+                            enable: false,
+                        },
+                        move: {
+                            speed: 5
+                        },
+                        size: {
+                            value: 2,
+                            random: true
+                        }
+                    },
+                    interactivity: {
+                        modes: {
+                            repulse: {
+                                distance: 200,
+                                duration: 100,
+                            }
+                        }
+                    },
+            }}/>
+            <h1 style={{margin: 'auto', color: '#F2F2F2'}}>Hey, I'm just working on this. So don't worry, it'll be available soon !</h1>
           </MainContainer>
         </WithThemes>
     </ContextProvider>)
@@ -31,4 +59,15 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
 `
+
+const CustomParticles = styled(Particles)`
+    position: absolute;
+    height: 100%;
+    z-index: -10;
+    width: 100%;
+    top: 0;
+    left: 0;
+`
+
+
 export default App

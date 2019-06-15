@@ -81,6 +81,7 @@ const PosedContainer = posed.div({
     close: { x: '-100%' },
     open: { x: -100}
 })
+
 const Container = styled(PosedContainer)`
     margin: 0;
     background-color: #2d132c;
