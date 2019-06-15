@@ -4,8 +4,6 @@ import { ContextProvider } from './context'
 import WithThemes from './theme'
 import styled from 'styled-components'
 
-import Home from './components/Home'
-import Header from './components/Headers'
 import Particles from 'react-particles-js';
 class App extends React.Component {
 
