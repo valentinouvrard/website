@@ -1,86 +1,63 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
 import Particles from 'react-particles-js'
+import { Link } from "@reach/router"
 
-class DesktopHeader extends React.Component {
-
-    state = {
-        hovering: -1,
-    }
-
-    render() {
-        return (
-        <Container>
-            <SubContainer>
-                <CustomTitle 
-                    onMouseEnter={() => this.setState({ hovering: 1 })}
-                    onMouseLeave={() => this.setState({ hovering: -1 })}
-                    href='http://netflixroulette.valentinouvrard.fr'>
-                    <MenuItem 
-                        pose={this.state.hovering === 1 ? 'hovered' : 'idle'} >
-                        PROJECTS
-                    </MenuItem>
-                </CustomTitle>
-                <CustomTitle 
-                    onMouseEnter={() => this.setState({ hovering: 2 })}
-                    onMouseLeave={() => this.setState({ hovering: -1 })}
-                    href='http://netflixroulette.valentinouvrard.fr'>
-                    <MenuItem 
-                        pose={this.state.hovering === 2 ? 'hovered' : 'idle'} >
-                        ABOUT ME
-                    </MenuItem>
-                </CustomTitle>
-                <CustomTitle 
-                    onMouseEnter={() => this.setState({ hovering: 3 })}
-                    onMouseLeave={() => this.setState({ hovering: -1 })}
-                    href='http://netflixroulette.valentinouvrard.fr'>
-                    <MenuItem 
-                        pose={this.state.hovering === 3 ? 'hovered' : 'idle'}>
-                        SKILLS
-                    </MenuItem>
-                </CustomTitle>
-                <CustomTitle 
-                    onMouseEnter={() => this.setState({ hovering: 4 })}
-                    onMouseLeave={() => this.setState({ hovering: -1 })}
-                    href='http://netflixroulette.valentinouvrard.fr'>
-                    <MenuItem 
-                        pose={this.state.hovering === 4 ? 'hovered' : 'idle'}>
-                        ARTICLES
-                    </MenuItem>
-                </CustomTitle>
-            </SubContainer>
-            <CustomParticles params={{
-                    particles: {
-                        number: {
-                            value: 100,
-                        },
-                        color: {
-                            value: "#FDFFFC"
-                        },
-                        line_linked: {
-                            enable: false,
-                        },
-                        move: {
-                            speed: 5
-                        },
-                        size: {
-                            value: 2,
-                            random: true
-                        }
-                    },
-                    interactivity: {
-                        modes: {
-                            repulse: {
-                                distance: 200,
-                                duration: 100,
-                            }
-                        }
-                    },
-            }}/>
-        </Container>)
-    }
+function DesktopHeader() {
+  const [hovering, setHovering] = useState(-1)
+  return (
+  <Container>
+      <SubContainer>
+          <CustomTitle 
+              onMouseEnter={() => setHovering(1)}
+              onMouseLeave={() => setHovering(-1)}
+              to='projects'>
+              <MenuItem 
+                  pose={hovering === 1 ? 'hovered' : 'idle'} >
+                  PROJECTS
+              </MenuItem>
+          </CustomTitle>
+          <CustomTitle 
+              onMouseEnter={() => setHovering(2)}
+              onMouseLeave={() => setHovering(-1)}
+              to='/'>
+              <MenuItem 
+                  pose={hovering === 2 ? 'hovered' : 'idle'} >
+                  ABOUT ME
+              </MenuItem>
+          </CustomTitle>
+      </SubContainer>
+      <CustomParticles params={{
+              particles: {
+                  number: {
+                      value: 100,
+                  },
+                  color: {
+                      value: "#FDFFFC"
+                  },
+                  line_linked: {
+                      enable: false,
+                  },
+                  move: {
+                      speed: 5
+                  },
+                  size: {
+                      value: 2,
+                      random: true
+                  }
+              },
+              interactivity: {
+                  modes: {
+                      repulse: {
+                          distance: 200,
+                          duration: 100,
+                      }
+                  }
+              },
+      }}/>
+  </Container>)
 }
 const Container = styled.div`
     margin: 0;
@@ -120,7 +97,7 @@ const MenuItem = styled(PosedItem)`
     font-weight: bold;
 `
 
-const CustomTitle = styled.a`
+const CustomTitle = styled(Link)`
     max-width: 90%;
     display: block;
     margin: 40px;

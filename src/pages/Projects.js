@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import styled from 'styled-components'
-import Menu from './Menu'
+import Projects from '../components/Projects'
 
-class Home extends React.Component {
+class ProjectsPage extends React.Component {
 
     state = {
         renderMenu: true,
@@ -13,7 +13,7 @@ class Home extends React.Component {
         const { renderMenu } = this.state
         return (
         <Container>
-            <Menu rendered={renderMenu}/>
+            <Projects rendered={renderMenu}/>
         </Container>)
     }
 }
@@ -21,7 +21,6 @@ class Home extends React.Component {
 const Container = styled.div`
     width: 100%;
     height: 100%;
-    margin-top: 25%;
 `
 
-export default Home
+export default ProjectsPage

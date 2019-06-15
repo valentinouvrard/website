@@ -4,21 +4,19 @@ import { ContextProvider } from './context'
 import WithThemes from './theme'
 import styled from 'styled-components'
 
-import Home from './components/Home'
 import Header from './components/Headers'
-class App extends React.Component {
 
-  render() {
-    return (
-      <ContextProvider>
-        <WithThemes>
-          <MainContainer>
-            <Header/>
-            <Home/>
-          </MainContainer>
-        </WithThemes>
+import AppRouter from './router';
+function App() {
+  return (
+    <ContextProvider>
+      <WithThemes>
+        <MainContainer>
+          <Header/>
+          <AppRouter/>
+        </MainContainer>
+      </WithThemes>
     </ContextProvider>)
-  }
 }
 
 const MainContainer = styled.div`
