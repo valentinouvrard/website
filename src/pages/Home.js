@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose';
-import { linear } from '@popmotion/easing';
 import useInterval from '../tools/useInterval';
 
 

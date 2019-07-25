@@ -14,9 +14,6 @@ const ProjectImg = styled.img`
   width: 100%;
   margin-top: 20px;
 `
-const Bold = styled.span`
-    font-weight: 400;
-`
 
 const Title = styled.h2`
     margin-top: 10px;

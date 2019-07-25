@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ArrowImage from './arrow.svg'
 import posed from 'react-pose'

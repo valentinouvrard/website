@@ -6,7 +6,6 @@ import styled from 'styled-components'
 
 import AppRouter from './router';
 import Header from './components/Headers/';
-import ArrowNavigation from './components/Navigation/arrow-navigation';
 import CustomParticles from './components/Particles';
 
 
