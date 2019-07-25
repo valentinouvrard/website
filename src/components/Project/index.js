@@ -19,12 +19,20 @@ const Title = styled.h2`
     margin-top: 10px;
     font-weight: 150;
     font-size : 48px;
+    @media (max-width: 960px) {
+        font-size: 36px;
+        line-height : 42px;
+    }
 `
 
 const Description = styled.p`
   font-weight: 150;
   font-size : 24px;
   line-height : 32px;
+  @media (max-width: 960px) {
+      font-size: 18px;
+      line-height : 26px;
+  }
 `
 const Techs = styled.div`
   margin-top: auto;
@@ -33,7 +41,8 @@ const Techs = styled.div`
 `
 
 const TechImg = styled.img`
-  height: 5em;
+  max-height: 5em;
+  max-width: 10em;
   margin: 10px;
 `
 
@@ -46,7 +55,7 @@ function Project(props) {
     return (
     <Container>
       <Grid container spacing={3}>
-        <Grid item md={12} lg={4}>
+        <Grid item sm={12} md={4}>
           <LineSeparator/>
           <Title>{props.project.title}</Title>
           <Description>{props.project.description}</Description>
@@ -57,7 +66,7 @@ function Project(props) {
             </Grid>
           </Techs>
         </Grid>
-        <Grid item md={12} lg={8}>
+        <Grid item sm={12} md={8}>
           <ProjectImg src={props.project.img}/>
         </Grid>
       </Grid>
