@@ -4,68 +4,43 @@ import { ContextProvider } from './context'
 import WithThemes from './theme'
 import styled from 'styled-components'
 
-import Particles from 'react-particles-js';
-class App extends React.Component {
-
-  render() {
-    return (
-      <ContextProvider>
-        <WithThemes>
-          <MainContainer>
-          <CustomParticles params={{
-                    particles: {
-                        number: {
-                            value: 100,
-                        },
-                        color: {
-                            value: "#FDFFFC"
-                        },
-                        line_linked: {
-                            enable: false,
-                        },
-                        move: {
-                            speed: 5
-                        },
-                        size: {
-                            value: 2,
-                            random: true
-                        }
-                    },
-                    interactivity: {
-                        modes: {
-                            repulse: {
-                                distance: 200,
-                                duration: 100,
-                            }
-                        }
-                    },
-            }}/>
-            <h1 style={{margin: 'auto', color: '#F2F2F2'}}>Hey, I'm just working on this. So don't worry, it'll be available soon !</h1>
-          </MainContainer>
-        </WithThemes>
-    </ContextProvider>)
-  }
-}
+import AppRouter from './router';
+import Header from './components/Headers/';
+import CustomParticles from './components/Particles';
 
 const MainContainer = styled.div`
+  * {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color : #FFFDF1;  
+  }
+  background : linear-gradient(60deg, rgba(2, 18, 30, 0.6) 0%, rgba(2, 18, 30, 1) 0%, rgba(3, 17, 32, 1) 52.27%, rgba(6, 15, 39, 1) 71.1%, rgba(10, 10, 50, 1) 84.51%, rgba(17, 4, 67, 1) 95.29%, rgba(21, 0, 77, 1) 99.87%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#02121E',endColorstr='#15004D' , GradientType=1);
   width: 100%;
   height: 100%;
   margin: 0;
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: row;
+  z-index: -2000;
 `
 
-const CustomParticles = styled(Particles)`
-    position: absolute;
-    height: 100%;
-    z-index: -10;
-    width: 100%;
-    top: 0;
-    left: 0;
+const SubContainer = styled.div`
+  padding: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
 `
-
-
+function App() {
+  return (
+    <ContextProvider>
+      <WithThemes>
+        <MainContainer>
+          <SubContainer>
+            <Header/>
+            <AppRouter/>
+          </SubContainer>
+          <CustomParticles/>
+        </MainContainer>
+      </WithThemes>
+    </ContextProvider>)
+}
 export default App
