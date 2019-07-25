@@ -20,7 +20,7 @@ const StyledComponentsTheme = props => (
   </ThemeProvider>
 )
 
-const StyledComponentsThemeWithMui = withTheme()(StyledComponentsTheme)
+const StyledComponentsThemeWithMui = withTheme(StyledComponentsTheme)
 
 const WithThemes = props => (
   <MaterialUiTheme>
