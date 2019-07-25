@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import Projects from '../pages/Projects'
 import { Router, Location } from '@reach/router';
 import posed, { PoseGroup } from 'react-pose';
+import Resume from '../pages/Resume';
 
 const RouteContainer = posed.div({
   enter: {  opacity: 1, delay: 300, beforeChildren: 300 },
@@ -27,7 +28,7 @@ function AppRouter() {
     <PosedRouter>
       <Home path="/"/>
       <Projects path="projects/:projectId"/>
-      <Home path="resume"/>
+      <Resume path="resume"/>
     </PosedRouter>
   )
 }

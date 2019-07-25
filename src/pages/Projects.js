@@ -41,8 +41,8 @@ const Container = styled.div`
 function Projects(props) {
     return <Container>
         <ArrowNavigation 
-            backAction={() => { navigate('/projects/' + props.projectId - 1); console.log(props.projectId - 1)}}
-            nextAction={() => {navigate('/projects/' + props.projectId + 1); console.log(props.projectId + 1)}}
+            backAction={() => { navigate('/projects/' + (Number.parseInt(props.projectId) - 1))}}
+            nextAction={() => {navigate('/projects/' + (Number.parseInt(props.projectId) + 1))}}
             displayBack={props.projectId > 0}
             displayNext={props.projectId < projects.length - 1}/>
         <Project project={projects[props.projectId]}/>

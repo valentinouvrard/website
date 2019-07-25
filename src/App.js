@@ -18,10 +18,6 @@ const MainContainer = styled.div`
     color : #FFFDF1;  
   }
   background : linear-gradient(60deg, rgba(2, 18, 30, 0.6) 0%, rgba(2, 18, 30, 1) 0%, rgba(3, 17, 32, 1) 52.27%, rgba(6, 15, 39, 1) 71.1%, rgba(10, 10, 50, 1) 84.51%, rgba(17, 4, 67, 1) 95.29%, rgba(21, 0, 77, 1) 99.87%);
-  border-style : Solid;
-  border-color : #000000;
-  border-color : rgba(0, 0, 0, 1);
-  border-width : 1px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#02121E',endColorstr='#15004D' , GradientType=1);
   width: 100%;
   height: 100%;

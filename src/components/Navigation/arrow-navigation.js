@@ -9,6 +9,7 @@ const Container = styled.div`
   top: 50%;
   position: fixed;
   left:0;
+  z-index: 100000;
   display: inline-flex;
 
 `
@@ -33,19 +34,18 @@ const RightArrowImg = styled(PosedReverseArrow)`
   cursor: pointer;
 `
 const Arrow = props => (
-  <LeftArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" width="75" height="75"/>
+  <LeftArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" width="75" height="75" onClick={props.onClick}/>
 )
 
 const ReverseArrow = props => (
-  <RightArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" width="75" height="75"/>
+  <RightArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" width="75" height="75" onClick={props.onClick}/>
 )
 
 function ArrowNavigation(props) {
-  console.log(props)
   return (
   <Container>
-    <Arrow pose={props.displayBack ? 'opened' : 'hidden'} onClick={() => console.log("BACK")}/>
-    <ReverseArrow pose={props.displayNext ? 'opened' : 'hidden'} onClick={() => console.log("NEXT")}/>
+    {props.displayBack && <Arrow pose={props.displayBack ? 'opened' : 'hidden'} onClick={props.backAction}/>}
+    {props.displayNext && <ReverseArrow pose={props.displayNext ? 'opened' : 'hidden'} onClick={props.nextAction}/>}
   </Container>)
 }
 export default ArrowNavigation
