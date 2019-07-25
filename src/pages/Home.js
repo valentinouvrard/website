@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose';
 import useInterval from '../tools/useInterval';
+import { Grid } from '@material-ui/core';
 
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
 `
 const Bold = styled.span`
     font-weight: 400;
@@ -16,13 +15,17 @@ const Description = styled.p`
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-right: 40px;
+    margin: 40px;
     margin-bottom: 150px;
     font-weight: 150;
     font-size : 52px;
     line-height : 60px;
     color : #FFFDF1;
     color : rgb(255, 253, 241);
+    @media (max-width: 600px) {
+        font-size: 36px;
+        line-height : 42px;
+    }
 `
 const GradientAnim = posed.div({
     hidden: { 
@@ -69,12 +72,18 @@ function Home() {
     }, 10000);
     return (
     <Container>
-        <GradientContainer>
-            <GradientCircle pose={circleState ? 'hidden' : 'visible'}/>
-        </GradientContainer>
-        <Description> An <Bold>Epita’s</Bold> student looking <br/>
-            for an <Bold>international internship</Bold><br/>
-            as <Bold>front-end developer</Bold></Description>
+        <Grid container spacing={3}>
+            <Grid item md={12} lg={4}>
+                <GradientContainer>
+                    <GradientCircle pose={circleState ? 'hidden' : 'visible'}/>
+                </GradientContainer>
+            </Grid>
+            <Grid item md={12} lg={8}>
+                <Description> An <Bold>Epita’s</Bold> student looking <br/>
+                    for an <Bold>international internship</Bold><br/>
+                    as <Bold>front-end developer</Bold></Description>
+            </Grid>
+        </Grid>
     </Container>)
 }
 
