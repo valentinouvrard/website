@@ -26,6 +26,16 @@ const Description = styled.p`
   font-size : 24px;
   line-height : 32px;
 `
+const Techs = styled.div`
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+`
+
+const TechImg = styled.img`
+  height: 5em;
+  margin: 10px;
+`
 
 const LineSeparator = styled.div`
     margin-top: 50px;
@@ -40,6 +50,12 @@ function Project(props) {
           <LineSeparator/>
           <Title>{props.project.title}</Title>
           <Description>{props.project.description}</Description>
+          <Techs>
+            <Description>Made with</Description>
+            <Grid container spacing={0}>
+                {props.project.techs.map(img =><TechImg src={img}/>)}
+            </Grid>
+          </Techs>
         </Grid>
         <Grid item md={12} lg={8}>
           <ProjectImg src={props.project.img}/>
