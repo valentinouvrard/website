@@ -32,19 +32,31 @@ const PosedReverseArrow = posed.img({
 const LeftArrowImg = styled(PosedArrow)`
   margin: 10px;
   cursor: pointer;
+  width: 75px;
+  height: 75px;
+  @media (max-width: 600px) {
+      width: 50px;
+      height: 50px;
+  }
 `
 const RightArrowImg = styled(PosedReverseArrow)`
   margin: 10px;
   transform: rotate(180deg);
   margin-left: auto;
+  width: 75px;
+  height: 75px;
   cursor: pointer;
+  @media (max-width: 600px) {
+      width: 50px;
+      height: 50px;
+  }
 `
 const Arrow = props => (
-  <LeftArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" width="75" height="75" onClick={props.onClick}/>
+  <LeftArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" onClick={props.onClick}/>
 )
 
 const ReverseArrow = props => (
-  <RightArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" width="75" height="75" onClick={props.onClick}/>
+  <RightArrowImg pose={props.pose} src={ArrowImage} alt="Arrow" onClick={props.onClick}/>
 )
 
 function ArrowNavigation(props) {
