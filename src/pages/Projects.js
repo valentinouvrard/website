@@ -35,8 +35,6 @@ const projects = [
 ]
 
 const Container = styled.div`
-    margin-right: 6em;
-    margin-left: 6em;
 `
 function Projects(props) {
     return <Container>

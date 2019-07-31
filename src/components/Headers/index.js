@@ -3,6 +3,10 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
 import { Link } from "@reach/router"
+<<<<<<< HEAD
+=======
+import { Grid } from '@material-ui/core';
+>>>>>>> 90b87c6c8b0ecb3742bc8e86a42d16d350b165a2
 
 const PageTitle = styled.span`
   font-style: normal;
@@ -27,7 +31,11 @@ const Subtitle = styled.span`
 const SubContainer = styled.div`
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     justify-content: center;
+=======
+    justify-content: flex-end;
+>>>>>>> 90b87c6c8b0ecb3742bc8e86a42d16d350b165a2
 `
 
 const PosedItem = posed(Subtitle)({
@@ -60,6 +68,7 @@ function Header() {
   console.log(route)
   return (
   <Container>
+<<<<<<< HEAD
       <SubContainer>
         <PageTitle>Valentin Ouvrard</PageTitle>
           <CustomTitle 
@@ -93,6 +102,47 @@ function Header() {
                 <PosedLine pose={route === "/resume" ? 'opened' : 'hidden'}/>
           </CustomTitle>
       </SubContainer>
+=======
+      <Grid container spacing={3} justify="space-between">
+        <Grid item xs={12} sm={4}>
+            <PageTitle>Valentin Ouvrard</PageTitle>
+        </Grid>
+        <Grid item xs={12} sm={8}>
+            <SubContainer>
+                <CustomTitle 
+                    onMouseEnter={() => setHovering(1)}
+                    onMouseLeave={() => setHovering(-1)}
+                    to='/'>
+                    <MenuItem 
+                        pose={(hovering === 1 || route === "/") ? 'hovered' : 'idle'} >
+                        Home
+                    </MenuItem>
+                        <PosedLine pose={route === "/" ? 'opened' : 'hidden'}/>
+                </CustomTitle>
+                <CustomTitle 
+                    onMouseEnter={() => setHovering(2)}
+                    onMouseLeave={() => setHovering(-1)}
+                    to='/projects/0'>
+                    <MenuItem 
+                        pose={(hovering === 2 || route.startsWith('/projects')) ? 'hovered' : 'idle'} >
+                        Projects
+                    </MenuItem>
+                        <PosedLine pose={route.startsWith('/projects') ? 'opened' : 'hidden'}/>
+                </CustomTitle>
+                <CustomTitle 
+                    onMouseEnter={() => setHovering(3)}
+                    onMouseLeave={() => setHovering(-1)}
+                    to='/resume'>
+                    <MenuItem 
+                        pose={(hovering === 3 || route === "/resume") ? 'hovered' : 'idle'} >
+                        Resume
+                    </MenuItem>
+                        <PosedLine pose={route === "/resume" ? 'opened' : 'hidden'}/>
+                </CustomTitle>
+            </SubContainer>
+        </Grid>
+      </Grid>
+>>>>>>> 90b87c6c8b0ecb3742bc8e86a42d16d350b165a2
   </Container>)
 }
 export default Header
