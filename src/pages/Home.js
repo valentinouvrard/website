@@ -17,7 +17,6 @@ const Description = styled.p`
     right: 0;
     margin: 40px;
     margin-bottom: 150px;
-    font-weight: 150;
     font-size : 52px;
     line-height : 60px;
     color : #FFFDF1;

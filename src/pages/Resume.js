@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid } from '@material-ui/core';
+import ResumeA4 from '../components/Resume/resume';
 
 
 const Container = styled.div`
@@ -11,9 +12,9 @@ const Container = styled.div`
 
 const Title = styled.h2`
     margin-top: 10px;
-    font-weight: 150;
     font-size : 48px;
     text-align: right;
+    font-weight: 150;
 `
 const LineSeparator = styled.div`
     margin-top: 50px;
@@ -25,9 +26,9 @@ const LineSeparator = styled.div`
 function Resume() {
     return (
     <Container>
-      
       <Grid container spacing={3}>
         <Grid item md={12} lg={9}>
+          <ResumeA4/>
         </Grid>
         <Grid item md={12} lg={3}>
           <LineSeparator/>
