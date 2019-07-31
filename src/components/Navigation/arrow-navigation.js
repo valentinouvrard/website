@@ -6,11 +6,17 @@ import posed from 'react-pose'
 
 const Container = styled.div`
   width: 100%;
-  top: 50%;
+  bottom: 5%;
   position: fixed;
   left:0;
   z-index: 100000;
   display: inline-flex;
+
+  @media print {
+    * {
+        display:none;
+    }
+  }
 
 `
 const PosedArrow = posed.img({
