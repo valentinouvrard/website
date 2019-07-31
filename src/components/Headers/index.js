@@ -15,6 +15,10 @@ const PageTitle = styled.span`
 `
 
 const Container = styled.div`
+    @media print {
+        display: none;
+        visibility: hidden;
+    }
 `
 
 const Subtitle = styled.span`
