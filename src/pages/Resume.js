@@ -1,12 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid } from '@material-ui/core';
-import ResumeA4 from '../components/Resume/resume';
 
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
 `
 
 
@@ -28,7 +25,6 @@ function Resume() {
     <Container>
       <Grid container spacing={3}>
         <Grid item md={12} lg={9}>
-          <ResumeA4/>
         </Grid>
         <Grid item md={12} lg={3}>
           <LineSeparator/>
