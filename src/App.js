@@ -16,7 +16,7 @@ const MainContainer = styled.div`
     margin: 0;
   }
 
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #FFFDF1;
   font-weight: 150;
   

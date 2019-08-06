@@ -56,6 +56,15 @@ const CustomTitle = styled(Link)`
         justify-content: flex-start;
     }
 `
+const CustomDirectTitle = styled.a`
+    text-decoration: none;
+    margin-left: 40px;
+    @media (max-width: 600px) {
+        margin-left: 0px;
+        margin-right: 40px;
+        justify-content: flex-start;
+    }
+`
 
 const Line = styled.div`
     margin-top: 10px;
@@ -99,16 +108,16 @@ function Header() {
                     </MenuItem>
                         <PosedLine pose={route.startsWith('/projects') ? 'opened' : 'hidden'}/>
                 </CustomTitle>
-                <CustomTitle 
+                <CustomDirectTitle 
                     onMouseEnter={() => setHovering(3)}
                     onMouseLeave={() => setHovering(-1)}
-                    to='/resume'>
+                    href='https://valentinouvrard.fr/resume'>
                     <MenuItem 
                         pose={(hovering === 3 || route === "/resume") ? 'hovered' : 'idle'} >
                         Resume
                     </MenuItem>
                         <PosedLine pose={route === "/resume" ? 'opened' : 'hidden'}/>
-                </CustomTitle>
+                </CustomDirectTitle>
             </SubContainer>
         </Grid>
       </Grid>
