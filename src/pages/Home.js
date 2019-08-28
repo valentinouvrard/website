@@ -21,9 +21,13 @@ const Description = styled.p`
     line-height : 60px;
     color : #FFFDF1;
     color : rgb(255, 253, 241);
-    @media (max-width: 600px) {
+    @media (max-width: 960px) {
         font-size: 36px;
         line-height : 42px;
+    }
+    @media (max-width: 600px) {
+        font-size: 26px;
+        line-height : 32px;
     }
 `
 const GradientAnim = posed.div({
