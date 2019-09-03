@@ -11,18 +11,21 @@ const Container = styled.div`
 `
 
 const ProjectImg = styled.img`
-  width: 100%;
-  margin-top: 20px;
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80%;
+  margin-top: 50px;
+
+  @media (max-width: 960px) {
+      max-width: 100%;
+      max-height: 100%;
+  }
 `
 
 const Title = styled.h2`
     margin-top: 10px;
-    font-size : 48px;
-
-    @media (max-width: 960px) {
-        font-size: 36px;
-        line-height : 42px;
-    }
+    font-size : 36px;
     @media (max-width: 600px) {
         font-size: 26px;
         line-height : 32px;
@@ -30,21 +33,13 @@ const Title = styled.h2`
 `
 
 const Description = styled.p`
-  font-size : 24px;
+  font-size : 18px;
   line-height : 32px;
-  @media (max-width: 1280px) {
-      font-size: 22px;
-      line-height : 26px;
-  }
 
   @media (max-width: 960px) {
-      font-size: 18px;
+      font-size: 16px;
       line-height : 22px;
   }
-  @media (max-width: 600px) {
-      font-size: 16px;
-      line-height : 20px;
-}
 `
 const Techs = styled.div`
   margin-top: auto;
@@ -53,18 +48,10 @@ const Techs = styled.div`
 `
 
 const TechImg = styled.img`
-  height: 5em;
+  height: 3em;
   margin: 10px;
   @media (max-width: 1280px) {
-    height: 4em;
-  }
-  @media (max-width: 960px) {
-    height: 3em;
-    margin: 8px;
-  }
-  @media (max-width: 600px) {
     height: 2em;
-    margin: 6px;
   }
 `
 

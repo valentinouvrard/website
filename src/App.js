@@ -32,9 +32,7 @@ const MainContainer = styled.div`
 `
 
 const SubContainer = styled.div`
-  padding: 2em;
-  padding-right: 2em;
-  padding-left: 2em;
+  margin: 2em;
 `
 function App() {
   return (
