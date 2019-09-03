@@ -79,7 +79,6 @@ const PosedLine = posed(Line)({
 function Header() {
   const [hovering, setHovering] = useState(-1)
   const route = window.location.pathname
-  console.log(route)
   return (
   <Container>
       <Grid container spacing={3} justify="space-between">
